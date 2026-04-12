@@ -1,0 +1,402 @@
+{
+  "VideoHero": {
+    "concierge_label": "Tu Concierge Experto en Destinos",
+    "title_part1": "Tu próxima aventura",
+    "title_part2": "comienza aquí.",
+    "description": "Olvídate de planear horarios o reservas. Diseñamos itinerarios a tu medida para que descubras cada destino con la libertad de un local y el confort de un VIP.",
+    "cta": "Planear mi viaje",
+    "watch_video": "Ver experiencias",
+    "nav": {
+      "home": "Inicio",
+      "assistance": "Asistencia",
+      "why_us": "Elegirnos",
+      "contact": "Contacto",
+      "contact_btn": "Cotizar ahora"
+    }
+  },
+  "Cart": {
+    "checkout": "Pagar",
+    "empty_title_part1": "Tu carrito está",
+    "empty_title_part2": "vacío",
+    "empty_description": "Parece que aún no has añadido ninguna aventura a tu itinerario. ¡El mundo te espera!",
+    "explore_destinations": "Explorar Destinos",
+    "football_passion": "Pasión Futbolera",
+    "back_home": "Volver al inicio",
+    "summary": {
+      "title": "Revisar selección",
+      "remove": "Quitar",
+      "date_label": "Fecha",
+      "travelers_label": "Viajeros",
+      "total_label": "Total del pedido",
+      "people_label": "personas"
+    },
+    "billing": {
+      "title": "Datos de Facturación",
+      "labels": {
+        "country": "País / Región"
+      },
+      "placeholders": {
+        "name": "Nombre completo",
+        "email": "Correo electrónico",
+        "address": "Dirección (Calle y número)",
+        "apt": "Apartamento, habitación, etc. (opcional)",
+        "city": "Población / Ciudad",
+        "state": "Estado / Provincia",
+        "zip": "Código Postal",
+        "phone": "Teléfono"
+      },
+      "countries": {
+        "other": "Otro"
+      }
+    },
+    "payment": {
+      "title": "Pago con Tarjeta",
+      "placeholders": {
+        "card_name": "Titular de la tarjeta",
+        "card_number": "Número de tarjeta"
+      },
+      "security_notice": "Pago procesado de forma segura SSL 256-bit",
+      "pay_button": "Pagar",
+      "processing": "Procesando..."
+    },
+    "success": {
+      "title": "¡Pago Exitoso!",
+      "message": "Hemos enviado los detalles de tu reserva a {email}",
+      "back_home": "Volver al inicio"
+    },
+    "errors": {
+      "missing_data": "Por favor completa todos los datos obligatorios.",
+      "generic_payment": "Error al procesar el pago"
+    }
+  },
+  "Header": {
+    "nav": {
+      "home": "Inicio",
+      "assistance": "Nuestra asistencia",
+      "why_us": "¿Porqué elegirnos?",
+      "contact": "Contacto",
+      "book_now": "Reservar ahora"
+    }
+  },
+  "Footer": {
+    "payments": {
+      "title": "Aceptamos"
+    },
+    "language": {
+      "title": "Idioma"
+    },
+    "legal": {
+      "title": "Legal",
+      "privacy": "Aviso de privacidad",
+      "refunds": "Política de reembolsos",
+      "terms": "Términos y condiciones"
+    },
+    "contact": {
+      "title": "Contacto",
+      "tel": "Tel"
+    },
+    "address": {
+      "title": "Dirección"
+    },
+    "bottom": {
+      "rights": "Todos los derechos reservados.",
+      "made_in": "Hecho en México"
+    }
+  },
+  "Hero": {
+    "title": "Diseña tu experiencia en México",
+    "subtitle": "Creamos itinerarios personalizados para que vivas lo mejor de cada destino sin preocuparte por la logística.",
+    "features": {
+      "itineraries": {
+        "title": "Itinerarios a medida",
+        "desc": "Diseñamos día por día tu viaje según tus intereses, desde aventuras y playas hasta gastronomía y cultura."
+      },
+      "bookings": {
+        "title": "Reservas exclusivas",
+        "desc": "Gestionamos tus lugares en los mejores sitios locales, desde fondas auténticas hasta experiencias gourmet Michelin."
+      },
+      "transport": {
+        "title": "Coordinación de transporte",
+        "desc": "Organizamos traslados aeropuerto-hotel, renta de autos y transporte privado para que te muevas sin complicaciones."
+      },
+      "vip": {
+        "title": "Tours con acceso VIP",
+        "desc": "Gestionamos tus excursiones y actividades de aventura con prioridad y acceso exclusivo cuando sea posible."
+      },
+      "concierge": {
+        "title": "Contacto Directo",
+        "desc": "Tendrás contacto directo con tu concierge por chat o llamada para cambios, dudas o recomendaciones instantáneas."
+      },
+      "local": {
+        "title": "Experiencias locales",
+        "desc": "Disfruta de cada destino como un verdadero local, con vivencias totalmente adaptadas a tus días y preferencias."
+      }
+    },
+    "cta": "Explorar experiencias",
+    "why_us": {
+      "title": "¿Por qué elegirnos?",
+      "subtitle": "Nos encargamos de cada detalle para que tu única ocupación sea disfrutar de la experiencia.",
+      "cards": {
+        "immediate": {
+          "title": "Acción inmediata",
+          "desc": "Diseñamos día por día tu viaje según tus intereses, desde aventuras y playas hasta gastronomía y cultura."
+        },
+        "experts": {
+          "title": "Expertos locales",
+          "desc": "Conocemos los rincones más auténticos y exclusivos de México. Accede a experiencias que no encontrarás en guías turísticas convencionales."
+        },
+        "planning": {
+          "title": "Planificación perfecta",
+          "desc": "Planificación transparente y sin cargos ocultos. Diseñamos rutas optimizadas para que aproveches cada minuto de tu estancia sin estrés."
+        },
+        "care": {
+          "title": "Cuidado personal",
+          "desc": "Tu seguridad y bienestar son nuestra prioridad. Adaptamos cada reserva a tus gustos, alergias o preferencias específicas."
+        }
+      }
+    }
+  },
+  "ArmaAventuraSection": {
+    "image_alt": "Grupo de viajeros",
+    "title": "Asistencia de viaje a tu medida Tu concierge personal en México",
+    "description": "Olvídate de planear todo por tu cuenta y de preocuparte por horarios o reservas. Con nuestro servicio de asistencia personalizada, adaptamos cada detalle de tu viaje según tus gustos, tiempo y presupuesto. Tú nos dices qué tipo de experiencias buscas, y nosotros nos encargamos del resto.",
+    "list_title": "Lo que podemos hacer por ti:",
+    "items": {
+      "itineraries": {
+        "label": "Itinerarios a medida: ",
+        "text": "Diseñamos día por día tu viaje según tus intereses, desde aventuras, playas, gastronomía, cultura, hasta actividades de bienestar."
+      },
+      "restaurants": {
+        "label": "Restaurantes: ",
+        "text": "Te mostramos los mejores lugares locales y hacemos las reservas para que solo disfrutes."
+      },
+      "transport": {
+        "label": "Transporte: ",
+        "text": "Organizamos traslados, renta de autos y transporte privado sin complicaciones."
+      },
+      "tours": {
+        "label": "Tours exclusivos: ",
+        "text": "Gestionamos experiencias con acceso prioritario y opciones VIP."
+      }
+    }
+  },
+  "CotizacionSection": {
+    "image_alt": "Experiencias de viaje en México",
+    "title": "¿Ya cuentas con tu cotización?",
+    "description": "Si ya cuentas con una cotización enviada por tu concierge, haz clic en el botón de abajo. Ingresa los detalles de tu presupuesto y procesa tu pago de manera rápida y segura.",
+    "button": "Añadir al carrito"
+  },
+  "ContactAventura": {
+    "title": "¿Cómo podemos <br /> ayudarte hoy?",
+    "subtitle": "Ya sea que tengas una duda rápida o quieras que diseñemos tu próximo gran viaje, estamos aquí para hacer que tu visita a México sea inolvidable.",
+    "success": {
+      "title": "¡Recibido!",
+      "message": "Nuestro equipo se pondrá en contacto contigo en menos de 24 horas.",
+      "send_another": "Enviar otro mensaje"
+    },
+    "form": {
+      "placeholders": {
+        "name": "Nombre completo",
+        "email": "Correo electrónico",
+        "phone": "Teléfono",
+        "message": "Cuéntanos tus dudas o ideas..."
+      },
+      "labels": {
+        "reason": "Motivo de contacto",
+        "departure": "Salida",
+        "return": "Regreso",
+        "travelers": "Viajeros"
+      },
+      "options": {
+        "concierge": "Viaje a medida (Servicio Concierge)",
+        "tours_doubt": "Duda sobre los tours",
+        "booking_help": "Asistencia con reserva ya realizada",
+        "person": "persona",
+        "people": "personas"
+      },
+      "submit": "Enviar solicitud",
+      "disclaimer": "Al enviar aceptas nuestras políticas de privacidad y términos de servicio."
+    },
+    "alerts": {
+      "email_error": "Error al enviar el correo, pero tu solicitud fue guardada.",
+      "connection_error": "Error de conexión."
+    }
+  },
+  "ExperiencesPage": {
+    "main_title": "Tu próxima aventura",
+    "subtitle": "Selección exclusiva de experiencias diseñadas para viajeros exigentes.",
+    "tax_included": "IVA (16%) incluido",
+    "book_now": "Reservar ahora",
+    "no_results": "No hay experiencias disponibles en este momento",
+    "error": "Error al cargar experiencias",
+    "pagination": {
+      "prev": "Anterior",
+      "next": "Siguiente",
+      "page": "Página",
+      "of": "de"
+    }
+  },
+  "ExperienceDetailPage": {
+    "error_loading": "Error al cargar la experiencia",
+    "booking": {
+      "per_person": "/ persona",
+      "tax_included": "IVA Incluido",
+      "select_date": "Selecciona tu fecha",
+      "travelers": "Número de personas",
+      "add_to_cart": "Agregar al carrito",
+      "added": "¡Agregado!"
+    },
+    "trust": {
+      "quick_confirmation": "Confirmación rápida",
+      "secure_payment": "Pago online seguro"
+    },
+    "details": {
+      "title": "Detalles de la experiencia",
+      "itinerary": "Itinerario",
+      "included": "Incluido",
+      "not_included": "No incluido",
+      "service_features": "Características del servicio",
+      "accessibility": "Accesibilidad",
+      "booking_info": "Información de reservación"
+    },
+    "alerts": {
+      "select_date": "Por favor selecciona una fecha para tu aventura",
+      "payment_error": "No pudimos procesar tu pago. Inténtalo de nuevo."
+    }
+  },
+  "CategoryPage": {
+    "tax_included": "IVA (16%) incluido",
+    "book_now": "Reservar ahora",
+    "not_found": {
+      "title": "Categoría no encontrada",
+      "back": "Volver al inicio"
+    },
+    "modal": {
+      "book_label": "Reservar",
+      "per_person": "por persona",
+      "confirm_button": "Confirmar Reserva",
+      "fields": {
+        "date": "Fecha",
+        "people": "Personas",
+        "name": "Nombre",
+        "email": "Email",
+        "phone": "Teléfono"
+      },
+      "success": {
+        "title": "Reserva confirmada",
+        "message": "Te enviaremos los detalles por email",
+        "close": "Cerrar"
+      }
+    }
+  },
+  "CartPage": {
+    "cart": {
+      "title": "Bolsa de Viaje",
+      "items": "Artículos",
+      "remove": "Quitar",
+      "selected_date": "Fecha seleccionada",
+      "travelers": "Número de viajeros",
+      "total_estimated": "Total estimado"
+    },
+    "form": {
+      "billing_details": "Detalles de Facturación",
+      "placeholders": {
+        "name": "Nombre completo",
+        "email": "Email de contacto",
+        "phone": "Teléfono",
+        "address": "Dirección (Calle y número exterior/interior)",
+        "apartment": "Apartamento, suite, unidad, etc. (Opcional)",
+        "city": "Ciudad",
+        "state": "Estado",
+        "zip": "C.P."
+      }
+    },
+    "payment": {
+      "method": "Método de Pago",
+      "processing": "Procesando...",
+      "confirm_booking": "Confirmar Reserva",
+      "security_notice": "Tus pagos se procesan de forma segura bajo estándares PCI-DSS de 256 bits.",
+      "placeholders": {
+        "card_name": "Titular de la tarjeta",
+        "card_number": "Número de tarjeta"
+      }
+    },
+    "modals": {
+      "error_title": "Error en el pago",
+      "try_again": "Intentar de nuevo",
+      "success_title": "¡Confirmado!",
+      "success_message": "Tu aventura en México comienza ahora. Hemos enviado los detalles a",
+      "summary": "Resumen de reserva",
+      "finish": "Finalizar"
+    },
+    "alerts": {
+      "complete_fields": "Por favor completa todos los datos obligatorios.",
+      "process_error": "Error al procesar el pago"
+    }
+  },
+  "Emails": {
+    "Quote": {
+      "subject": "Confirmación de Solicitud",
+      "title": "Solicitud Recibida",
+      "greeting": "Hola {name}, estamos diseñando una propuesta personalizada para <strong>{experience}</strong>. Un concierge se pondrá en contacto contigo en breve.",
+      "disclaimer": "Este es un acuse de recibo automático. No es necesario responder.",
+      "labels": {
+        "pax": "Pax",
+        "people": "Personas",
+        "period": "Periodo",
+        "to": "al",
+        "notes": "Notas de viaje"
+      }
+    },
+    "Checkout": {
+      "subject": "CONFIRMACIÓN DE PEDIDO",
+      "confirmation_title": "Confirmación",
+      "order_label": "Orden",
+      "table": {
+        "header_experience": "Experiencia / Detalle",
+        "header_pax": "Pax",
+        "reservation_label": "Reserva"
+      },
+      "summary": {
+        "total_paid": "Monto Total Pagado",
+        "payment_method": "Método de Pago"
+      },
+      "billing": {
+        "title": "Info de Facturación",
+        "phone": "Teléfono"
+      },
+      "footer": {
+        "thanks": "Gracias por elegir exclusividad"
+      }
+    }
+  },
+  "payQuote": {
+    "specialServices": "Servicios especiales",
+    "personalizedExperience": "Experiencia Personalizada",
+    "confirmationTitle": "Confirmación de Reserva Personalizada",
+    "description": "Este apartado es exclusivo para clientes que ya cuentan con un itinerario y presupuesto enviado por su concierge.",
+    "stepsTitle": "Pasos para realizar tu pago:",
+    "step1": "1. Monto: Ingresa en el cuadro de precio la cantidad total acordada (IVA incluido).",
+    "step2": "2. Referencia: Escribe tu número de folio o nombre del paquete en el campo de texto.",
+    "step3": "3. Seguridad: Haz clic en “Añadir al carrito” para proceder al pago encriptado.",
+    "quoteButton": "Cotiza aquí",
+    "assistanceText": "Si tienes alguna pregunta sobre este tour o necesitas asistencia para hacer tu reserva, estaremos encantados de ayudarte.",
+    "checkoutTitle": "Checkout Personalizado",
+    "checkoutSubtitle": "Ingresa los detalles de tu cotización acordada",
+    "labelFolio": "No. de cotización",
+    "labelNombre": "Nombre",
+    "labelMonto": "Monto total acordado (MXN)",
+    "placeholderFolio": "WNDR-XXXXX",
+    "placeholderNombre": "Nombre",
+    "placeholderMonto": "0.00",
+    "statusFound": "FOLIO ENCONTRADO: DATOS ACTUALIZADOS",
+    "statusExternal": "FOLIO EXTERNO: INGRESE EL MONTO ACORDADO",
+    "holderLabel": "Titular de la reserva",
+    "addToCart": "Añadir a la bolsa",
+    "confirmationDisclaimer": "Al añadir a la bolsa confirmas que el folio y monto corresponden a la cotización enviada por nuestro equipo de Odyssey México.",
+    "customOrder": "ORDEN PERSONALIZADA",
+    "externalFolio": "FOLIO EXTERNO",
+    "client": "CLIENTE",
+    "destination": "EXPERIENCIA Odyssey México"
+  }
+}
