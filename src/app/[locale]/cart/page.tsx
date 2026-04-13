@@ -288,13 +288,6 @@ export default function CartPage() {
                                             <div className="w-2 h-2 bg-[#008080] rounded-full animate-pulse"></div> 
                                             {t("form.billing_details")}
                                         </h2>
-                                        {/* Botón de Test */}
-                                        <button 
-                                            onClick={fillTestData}
-                                            className="text-[8px] font-black text-[#D1127C] border border-[#D1127C]/30 px-3 py-1 rounded-full uppercase tracking-widest hover:bg-[#D1127C] hover:text-white transition-all"
-                                        >
-                                            Demo Data
-                                        </button>
                                     </div>
 
                                     <div className="grid gap-4">
