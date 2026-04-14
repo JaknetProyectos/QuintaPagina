@@ -22,7 +22,7 @@ export default function CotizacionSection() {
             <div className="absolute -inset-1 bg-gradient-to-r from-[#008080] to-[#D1127C] rounded-[36px] blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200" />
             <div className="relative rounded-[32px] overflow-hidden border border-white/10 shadow-2xl">
               <Image
-                src={"https://lirp.cdn-website.com/41f05afb/dms3rep/multi/opt/Viaje+1-640w.jpg"}
+                src={"https://www.scti.co.nz/travel-advice/mc-4ae19cb4-2340-482b-9937-16c9-cdn-endpoint.azureedge.net/-/media/project/scti/nz/images/travel-advice/benefits-of-travelling/travel-makes-you-richer-couple-hiking-900x675.jpg?rev=03b2da0b5b064d22b8cfa1a5da412ed4&hash=6925B136BD01EC634AD7CA8479EAD058"}
                 alt={t("image_alt")}
                 width={800}
                 height={600}

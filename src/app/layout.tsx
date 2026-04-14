@@ -26,7 +26,9 @@ export default function RootLayout({
           src="//unpkg.com/same-runtime/dist/index.global.js"
         />
       </head>
-      {children}
+      <body>
+        {children}
+      </body>
     </html>
   );
 }

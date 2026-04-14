@@ -22,7 +22,7 @@ export default function VideoHeroSection() {
   }, []);
 
   return (
-    <div className="relative pt-20 h-screen w-full overflow-hidden bg-black">
+    <div className="relative pt-32 h-screen w-full overflow-hidden bg-black">
       {/* VIDEO ASSET - Fondo */}
       <video
         autoPlay

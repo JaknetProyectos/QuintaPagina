@@ -1,6 +1,6 @@
 "use client";
 
-import pueblo from "@/public/pueblo.png";
+import pueblo from "@/public/pueblo.webp";
 import Image from "next/image";
 
 export default function ExperienciasSection() {

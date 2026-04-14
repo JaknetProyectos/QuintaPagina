@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 interface Photo {
@@ -17,6 +17,14 @@ export default function PhotoGallery({ photos, title = "Galería de Fotos" }: Ph
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // 1. Omitimos la primera imagen y desordenamos el resto aleatoriamente
+  const shuffledPhotos = useMemo(() => {
+    if (!photos || photos.length <= 1) return [];
+    
+    // .slice(1) elimina la primera imagen (hero)
+    return photos.slice(1).sort(() => Math.random() - 0.5);
+  }, [photos]);
+
   const openLightbox = (index: number) => {
     setCurrentIndex(index);
     setLightboxOpen(true);
@@ -27,12 +35,15 @@ export default function PhotoGallery({ photos, title = "Galería de Fotos" }: Ph
   };
 
   const goToPrevious = () => {
-    setCurrentIndex((prev) => (prev === 0 ? photos.length - 1 : prev - 1));
+    setCurrentIndex((prev) => (prev === 0 ? shuffledPhotos.length - 1 : prev - 1));
   };
 
   const goToNext = () => {
-    setCurrentIndex((prev) => (prev === photos.length - 1 ? 0 : prev + 1));
+    setCurrentIndex((prev) => (prev === shuffledPhotos.length - 1 ? 0 : prev + 1));
   };
+
+  // Si no hay fotos después de omitir la primera, no renderizamos la sección
+  if (shuffledPhotos.length === 0) return null;
 
   return (
     <>
@@ -44,7 +55,7 @@ export default function PhotoGallery({ photos, title = "Galería de Fotos" }: Ph
 
           {/* Gallery Grid */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {photos.map((photo, index) => (
+            {shuffledPhotos.map((photo, index) => (
               <button
                 key={photo.src}
                 type="button"
@@ -70,7 +81,6 @@ export default function PhotoGallery({ photos, title = "Galería de Fotos" }: Ph
       {/* Lightbox */}
       {lightboxOpen && (
         <div className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center">
-          {/* Close button */}
           <button
             type="button"
             onClick={closeLightbox}
@@ -79,7 +89,6 @@ export default function PhotoGallery({ photos, title = "Galería de Fotos" }: Ph
             <X className="w-8 h-8" />
           </button>
 
-          {/* Previous button */}
           <button
             type="button"
             onClick={goToPrevious}
@@ -88,19 +97,17 @@ export default function PhotoGallery({ photos, title = "Galería de Fotos" }: Ph
             <ChevronLeft className="w-8 h-8" />
           </button>
 
-          {/* Image */}
-          <div className="max-w-5xl max-h-[80vh] px-16">
+          <div className="max-w-5xl max-h-[80vh] px-16 text-center">
             <img
-              src={photos[currentIndex].src}
-              alt={photos[currentIndex].alt}
-              className="max-w-full max-h-[80vh] object-contain rounded-lg"
+              src={shuffledPhotos[currentIndex].src}
+              alt={shuffledPhotos[currentIndex].alt}
+              className="max-w-full max-h-[80vh] object-contain rounded-lg mx-auto"
             />
-            <p className="text-white/70 text-center mt-4">
-              {photos[currentIndex].alt} ({currentIndex + 1} / {photos.length})
+            <p className="text-white/70 mt-4">
+              {shuffledPhotos[currentIndex].alt} ({currentIndex + 1} / {shuffledPhotos.length})
             </p>
           </div>
 
-          {/* Next button */}
           <button
             type="button"
             onClick={goToNext}
@@ -110,13 +117,13 @@ export default function PhotoGallery({ photos, title = "Galería de Fotos" }: Ph
           </button>
 
           {/* Thumbnails */}
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-            {photos.map((photo, index) => (
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 max-w-full overflow-x-auto px-4">
+            {shuffledPhotos.map((photo, index) => (
               <button
-                key={photo.src}
+                key={`thumb-${photo.src}`}
                 type="button"
                 onClick={() => setCurrentIndex(index)}
-                className={`w-12 h-12 rounded overflow-hidden border-2 transition-colors ${
+                className={`flex-shrink-0 w-12 h-12 rounded overflow-hidden border-2 transition-colors ${
                   index === currentIndex ? "border-[#ae4e68]" : "border-transparent opacity-50 hover:opacity-100"
                 }`}
               >
