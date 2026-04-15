@@ -48,7 +48,7 @@ export default function HeroSection() {
     {/* 3. LA IMAGEN (Mosaico pequeño horizontal) */}
     <div className="md:col-span-5 md:row-span-1 relative rounded-[40px] overflow-hidden min-h-[200px] border border-gray-100 shadow-sm">
       <Image
-        src={persona}
+        src="https://plus.unsplash.com/premium_photo-1683141023289-49fdc6fa7506?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         alt="Experiencia"
         fill
         className="object-cover transition-transform duration-700 hover:scale-110"

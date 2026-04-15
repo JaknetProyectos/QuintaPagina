@@ -45,10 +45,10 @@ export default function ExperiencesPage() {
         <>
             {/* El Header ahora encontrará un fondo oscuro para verse bien desde el inicio */}
             <Header />
-            
+
             <section className="min-h-screen bg-[#001212] pt-32 pb-20">
                 <div className="container mx-auto px-6">
-                    
+
                     {/* Encabezado de página con contraste para Header Transparente */}
                     <div className="relative mb-16 text-center space-y-4">
                         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#008080]/10 border border-[#008080]/20 text-[#008080] text-[10px] font-black uppercase tracking-[0.3em] mb-2">
@@ -75,10 +75,12 @@ export default function ExperiencesPage() {
                                 <div className="relative h-80 overflow-hidden">
                                     <div
                                         className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110"
-                                        style={{ backgroundImage: `url(${exp.image})` }}
+                                        style={{
+                                            backgroundImage: `url(${exp.images[Math.floor(Math.random() * exp.images.length)]})`
+                                        }}
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-[#001a1a] via-transparent to-transparent opacity-60" />
-                                    
+
                                 </div>
 
                                 {/* Contenido */}
@@ -99,7 +101,7 @@ export default function ExperiencesPage() {
                                                 MXN {formatPriceWithDecimals(exp.price)}
                                             </p>
                                         </div>
-                                        
+
                                         <div className="h-12 w-12 rounded-full bg-[#008080] flex items-center justify-center text-white transition-all duration-300 group-hover:bg-[#D1127C] group-hover:rotate-45">
                                             <ChevronRight size={24} />
                                         </div>
