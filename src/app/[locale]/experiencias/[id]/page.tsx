@@ -12,6 +12,7 @@ import Loading from "@/components/Loading";
 import { Link } from "@/i18n/routing";
 import { formatPriceWithDecimals } from "@/lib/price";
 import { useLocale, useTranslations } from "next-intl";
+import { crearSlug } from "@/lib/utils";
 
 export default function ExperienceDetailPage() {
     const t = useTranslations("ExperienceDetailPage");
@@ -19,7 +20,7 @@ export default function ExperienceDetailPage() {
     const id = params.id as string;
     const { addToCart } = useCart();
     const { data, loading, error } = useExperience(id);
-    const locale = useLocale()
+    const locale = useLocale();
 
     const [selectedImage, setSelectedImage] = useState(0);
     const [galleryOpen, setGalleryOpen] = useState(false);
@@ -41,13 +42,21 @@ export default function ExperienceDetailPage() {
         );
     }
 
-    data.priceFormatted = data.priceFormatted ?? "";
-    data.caracteristicas_servicio = data.caracteristicas_servicio ?? [];
-    data.destinationName = data.destinationName ?? "";
-    data.destinationSlug = data.destinationSlug ?? "";
-    data.incluido = data.incluido ?? [];
-    data.no_incluido = data.no_incluido ?? [];
-    data.accesibilidad = data.accesibilidad ?? [];
+    // --- LÓGICA DE TRADUCCIÓN PARA COLUMNAS NUEVAS ---
+    const isEs = locale === "es";
+
+    const title = isEs ? data.title : (data.title_english || data.title);
+    const description = isEs ? data.description : (data.description_english || data.description);
+    
+    // Arrays: Intentamos usar la versión en inglés, si no existe usamos la original (español)
+    const caracteristicas = isEs ? (data.caracteristicas_servicio ?? []) : (data.caracteristicas_servicio_english ?? data.caracteristicas_servicio ?? []);
+    const incluido = isEs ? (data.incluido ?? []) : (data.incluido_english ?? data.incluido ?? []);
+    const no_incluido = isEs ? (data.no_incluido ?? []) : (data.no_incluido_english ?? data.no_incluido ?? []);
+    const accesibilidad = isEs ? (data.accesibilidad ?? []) : (data.accesibilidad_english ?? data.accesibilidad ?? []);
+
+    // Itinerario: Manejamos si viene como String o como Array (uniéndolo con saltos de línea)
+    const itinerarioData = isEs ? data.itinerario : (data.itinerario_english || data.itinerario);
+    const itinerario = Array.isArray(itinerarioData) ? itinerarioData.join('\n') : (itinerarioData || "");
 
     const images = data.images?.length ? data.images : [data.image];
 
@@ -61,8 +70,8 @@ export default function ExperienceDetailPage() {
         }
 
         addToCart({
-            experienceId: data.id,
-            title: locale === "es" ? data.title : data.title_english,
+            experienceId: crearSlug(title),
+            title: title,
             destinationName: data.destinationName ?? "",
             price: Number(data.price),
             personas: selection.personas,
@@ -80,7 +89,6 @@ export default function ExperienceDetailPage() {
             <div className="min-h-screen bg-[#001212] pt-24 md:pt-28 pb-12 md:pb-20">
                 <div className="max-w-7xl mx-auto px-4 md:px-6">
 
-                    {/* 🔥 GRID PRINCIPAL */}
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
 
                         {/* 🖼 GALERÍA */}
@@ -123,11 +131,11 @@ export default function ExperienceDetailPage() {
                                 </Link>
 
                                 <h1 className="text-3xl md:text-5xl font-black text-white tracking-tighter leading-[1.1]">
-                                    {locale === "es" ? data.title : data.title_english}
+                                    {title}
                                 </h1>
 
                                 <p className="text-gray-400 leading-relaxed text-base md:text-lg font-medium">
-                                    {data.description}
+                                    {description}
                                 </p>
                             </div>
 
@@ -192,17 +200,6 @@ export default function ExperienceDetailPage() {
                                         <><ShoppingCart size={18} className="md:w-5 md:h-5" /> {t("booking.add_to_cart")}</>
                                     )}
                                 </button>
-
-                                <div className="mt-6 md:mt-8 grid grid-cols-2 gap-2 text-[8px] md:text-[10px] font-bold text-gray-500 uppercase tracking-widest border-t border-white/5 pt-6 text-center">
-                                    <div className="flex items-center justify-center gap-2 italic">
-                                        <CheckCircle size={12} className="text-[#008080]" />
-                                        {t("trust.quick_confirmation")}
-                                    </div>
-                                    <div className="flex items-center justify-center gap-2 italic">
-                                        <ShieldCheck size={12} className="text-[#008080]" />
-                                        {t("trust.secure_payment")}
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -216,28 +213,28 @@ export default function ExperienceDetailPage() {
                                     {t("details.title")}
                                 </h2>
                                 <p className="text-gray-400 leading-relaxed font-medium text-sm md:text-base">
-                                    {data.description || ""}
+                                    {description}
                                 </p>
                             </div>
 
-                            {data.itinerario && (
+                            {itinerario && (
                                 <div className="bg-white/5 border border-white/5 rounded-[30px] md:rounded-[40px] p-6 md:p-10 space-y-6">
                                     <h3 className="text-lg md:text-xl font-black text-white">{t("details.itinerary")}</h3>
                                     <p className="text-gray-400 font-medium whitespace-pre-line leading-relaxed text-sm md:text-base">
-                                        {data.itinerario || ""}
+                                        {itinerario}
                                     </p>
                                 </div>
                             )}
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                                {data.incluido?.length > 0 && (
+                                {incluido.length > 0 && (
                                     <div className="bg-[#008080]/5 border border-[#008080]/10 rounded-[24px] md:rounded-[32px] p-6 md:p-8">
                                         <h3 className="text-base md:text-lg font-black text-[#008080] mb-5 md:mb-6 flex items-center gap-2">
                                             <CheckCircle size={18} className="md:w-5 md:h-5" />
                                             {t("details.included")}
                                         </h3>
                                         <ul className="space-y-3">
-                                            {data.incluido.map((item: string, i: number) => (
+                                            {incluido.map((item: string, i: number) => (
                                                 <li key={i} className="text-xs md:text-sm text-gray-300 flex items-start gap-3">
                                                     <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#008080] flex-shrink-0" />
                                                     {item}
@@ -247,14 +244,14 @@ export default function ExperienceDetailPage() {
                                     </div>
                                 )}
 
-                                {data.no_incluido?.length > 0 && (
+                                {no_incluido.length > 0 && (
                                     <div className="bg-[#D1127C]/5 border border-[#D1127C]/10 rounded-[24px] md:rounded-[32px] p-6 md:p-8">
                                         <h3 className="text-base md:text-lg font-black text-[#D1127C] mb-5 md:mb-6 flex items-center gap-2">
                                             <X size={18} className="md:w-5 md:h-5" />
                                             {t("details.not_included")}
                                         </h3>
                                         <ul className="space-y-3">
-                                            {data.no_incluido.map((item: string, i: number) => (
+                                            {no_incluido.map((item: string, i: number) => (
                                                 <li key={i} className="text-xs md:text-sm text-gray-300 flex items-start gap-3">
                                                     <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#D1127C] flex-shrink-0" />
                                                     {item}
@@ -267,13 +264,13 @@ export default function ExperienceDetailPage() {
                         </div>
 
                         <div className="space-y-6 md:space-y-8">
-                            {data.caracteristicas_servicio?.length > 0 && (
+                            {caracteristicas.length > 0 && (
                                 <div className="bg-white/5 border border-white/5 rounded-[24px] md:rounded-[32px] p-6 md:p-8">
                                     <h3 className="text-[10px] md:text-xs font-black text-white uppercase tracking-widest mb-6 border-b border-white/5 pb-4">
                                         {t("details.service_features")}
                                     </h3>
                                     <div className="space-y-4">
-                                        {data.caracteristicas_servicio.map((item: string, i: number) => (
+                                        {caracteristicas.map((item: string, i: number) => (
                                             <div key={i} className="text-xs md:text-sm text-gray-400 font-medium flex items-center gap-3">
                                                 <div className="w-1 h-4 bg-[#008080] rounded-full" />
                                                 {item}
@@ -283,13 +280,13 @@ export default function ExperienceDetailPage() {
                                 </div>
                             )}
 
-                            {data.accesibilidad?.length > 0 && (
+                            {accesibilidad.length > 0 && (
                                 <div className="bg-white/5 border border-white/5 rounded-[24px] md:rounded-[32px] p-6 md:p-8">
                                     <h3 className="text-[10px] md:text-xs font-black text-white uppercase tracking-widest mb-6 border-b border-white/5 pb-4">
                                         {t("details.accessibility")}
                                     </h3>
                                     <ul className="space-y-4">
-                                        {data.accesibilidad.map((item: string, i: number) => (
+                                        {accesibilidad.map((item: string, i: number) => (
                                             <li key={i} className="text-xs md:text-sm text-gray-400 font-medium flex gap-3">
                                                 <span className="text-[#008080]">•</span>
                                                 {item}
@@ -298,60 +295,12 @@ export default function ExperienceDetailPage() {
                                     </ul>
                                 </div>
                             )}
-
-                            {data.reservaciones_antelacion && (
-                                <div className="bg-[#008080]/10 border border-[#008080]/20 rounded-[24px] md:rounded-[32px] p-6 md:p-8">
-                                    <h3 className="text-[10px] md:text-xs font-black text-[#008080] uppercase tracking-widest mb-4">
-                                        {t("details.booking_info")}
-                                    </h3>
-                                    <p className="text-xs md:text-sm text-gray-300 font-medium leading-relaxed italic">
-                                        "{data.reservaciones_antelacion}"
-                                    </p>
-                                </div>
-                            )}
                         </div>
                     </div>
                 </div>
             </div>
 
             <Footer />
-
-            {/* 🔥 MODAL GALERÍA */}
-            {galleryOpen && (
-                <div className="fixed inset-0 bg-black/95 flex items-center justify-center z-[100] backdrop-blur-sm p-4">
-                    <button
-                        onClick={() => setGalleryOpen(false)}
-                        className="absolute top-6 right-6 text-white/50 hover:text-white transition-colors z-[110]"
-                    >
-                        <X size={32} className="md:w-10 md:h-10" strokeWidth={1.5} />
-                    </button>
-
-                    <button
-                        onClick={prevImage}
-                        className="hidden md:flex absolute left-8 p-4 bg-white/5 rounded-full text-white/50 hover:text-white hover:bg-white/10 transition-all"
-                    >
-                        <ChevronLeft size={48} />
-                    </button>
-
-                    <div className="relative w-full max-w-6xl h-full flex flex-col items-center justify-center gap-4">
-                        <img
-                            src={images[selectedImage]}
-                            className="max-h-[70vh] md:max-h-[85vh] max-w-full rounded-2xl md:rounded-[32px] shadow-2xl border border-white/10 object-contain"
-                        />
-                        <div className="flex md:hidden gap-10">
-                             <button onClick={prevImage} className="p-4 bg-white/10 rounded-full text-white"><ChevronLeft size={30} /></button>
-                             <button onClick={nextImage} className="p-4 bg-white/10 rounded-full text-white"><ChevronRight size={30} /></button>
-                        </div>
-                    </div>
-
-                    <button
-                        onClick={nextImage}
-                        className="hidden md:flex absolute right-8 p-4 bg-white/5 rounded-full text-white/50 hover:text-white hover:bg-white/10 transition-all"
-                    >
-                        <ChevronRight size={48} />
-                    </button>
-                </div>
-            )}
         </div>
     );
 }

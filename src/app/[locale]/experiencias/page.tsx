@@ -91,7 +91,7 @@ export default function ExperiencesPage() {
                                     </h2>
 
                                     <p className="text-gray-400 text-sm leading-relaxed line-clamp-2 mb-8">
-                                        {exp.description}
+                                        {locale === "es" ? exp.description : exp.description_english}
                                     </p>
 
                                     <div className="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">

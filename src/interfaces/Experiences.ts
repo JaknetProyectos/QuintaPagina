@@ -15,6 +15,14 @@ export interface Experience {
   no_incluido?: string[];
   accesibilidad?: string[];
   reservaciones_antelacion?: string;
+  description_english: string;
+
+  caracteristicas_servicio_english: string[];
+  itinerario_english: string[];
+  incluido_english: string[];
+  no_incluido_english: string[];
+  accesibilidad_english: string[];
+
 
   // Propiedades sin uso
   rating?: number;

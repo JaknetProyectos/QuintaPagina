@@ -66,7 +66,14 @@ export function useExperiences(options: UseExperiencesOptions = {}) {
           category: e.category,
           rating: e.rating,
           reviewCount: e.review_count,
+          
           title_english: e.title_english ?? "",
+          description_english: e.description_english ?? "",
+          caracteristicas_servicio_english: e?.caracteristicas_servicio_english || [],
+          itinerario_english: e?.itinerario_english || "",
+          incluido_english: e?.incluido_english || [],
+          no_incluido_english: e?.no_incluido_english || [],
+          accesibilidad_english: e?.accesibilidad_english || [],
 
           caracteristicas_servicio: e?.caracteristicas_servicio || [],
           itinerario: e?.itinerario || "",

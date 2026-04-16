@@ -34,13 +34,21 @@ export function useExperience(id: string) {
                     images: data.images,
                     rating: data.rating,
                     reviewCount: data.review_count,
+                    
                     title_english: data.title_english ?? "",
+                    description_english: data.description_english ?? "",
+                    caracteristicas_servicio_english: data?.caracteristicas_servicio_english || [],
+                    itinerario_english: data?.itinerario_english || "",
+                    incluido_english: data?.incluido_english || [],
+                    no_incluido_english: data?.no_incluido_english || [],
+                    accesibilidad_english: data?.accesibilidad_english || [],
                     
                     caracteristicas_servicio: data?.caracteristicas_servicio || [],
                     itinerario: data?.itinerario || "",
                     incluido: data?.incluido || [],
                     no_incluido: data?.no_incluido || [],
                     accesibilidad: data?.accesibilidad || [],
+                    
                     reservaciones_antelacion: data?.reservaciones_antelacion || "",
                 };
 
