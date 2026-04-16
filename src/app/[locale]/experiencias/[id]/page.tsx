@@ -62,7 +62,7 @@ export default function ExperienceDetailPage() {
 
         addToCart({
             experienceId: data.id,
-            title: data.title,
+            title: locale === "es" ? data.title : data.title_english,
             destinationName: data.destinationName ?? "",
             price: Number(data.price),
             personas: selection.personas,
@@ -123,7 +123,7 @@ export default function ExperienceDetailPage() {
                                 </Link>
 
                                 <h1 className="text-3xl md:text-5xl font-black text-white tracking-tighter leading-[1.1]">
-                                    {data.title}
+                                    {locale === "es" ? data.title : data.title_english}
                                 </h1>
 
                                 <p className="text-gray-400 leading-relaxed text-base md:text-lg font-medium">

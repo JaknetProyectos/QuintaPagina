@@ -23,7 +23,7 @@ import { saveReservation } from "@/lib/reservations";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { formatPriceWithDecimals } from "@/lib/price";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 // Loading skeleton M3 Style
 function PageSkeleton() {
@@ -203,6 +203,7 @@ export default function DestinationPage() {
 
   const { data: destination, loading: destLoading } = useDestination(slug);
   const { data: experiences, loading: expLoading } = useExperiences({ destinationSlug: slug, pageSize: 12 });
+const locale = useLocale();
 
   const [bookingModal, setBookingModal] = useState<{
     isOpen: boolean;
@@ -278,7 +279,7 @@ export default function DestinationPage() {
                     <div className="p-10 flex-grow flex flex-col justify-between space-y-6">
                       <div className="space-y-3">
                         <h2 className="text-2xl font-black text-white tracking-tighter uppercase italic leading-tight group-hover:text-[#008080] transition-colors">
-                            {exp.title}
+                            {locale === "es" ? exp.title : exp.title_english}
                         </h2>
                         <p className="text-gray-500 text-sm font-medium line-clamp-2 leading-relaxed">
                           {exp.description}
@@ -288,7 +289,6 @@ export default function DestinationPage() {
                       <div className="space-y-6">
                         <div className="flex items-end justify-between border-t border-white/5 pt-6">
                             <div className="space-y-1">
-                                <p className="text-[10px] font-black text-gray-600 uppercase tracking-widest">Desde</p>
                                 <p className="text-2xl font-black text-white italic tracking-tighter">
                                     MXN ${formatPriceWithDecimals(exp.price)}
                                 </p>

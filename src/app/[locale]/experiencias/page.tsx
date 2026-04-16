@@ -8,13 +8,14 @@ import Footer from "@/components/Footer";
 import { useState } from "react";
 import Loading from "@/components/Loading";
 import { formatPriceWithDecimals } from "@/lib/price";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { ChevronLeft, ChevronRight, MapPin, Compass } from "lucide-react";
 
 export default function ExperiencesPage() {
     const t = useTranslations("ExperiencesPage");
     const params = useParams();
     const [page, setPage] = useState(1);
+    const locale = useLocale();
 
     const {
         data,
@@ -86,7 +87,7 @@ export default function ExperiencesPage() {
                                 {/* Contenido */}
                                 <div className="p-8 flex flex-col flex-grow">
                                     <h2 className="text-2xl font-bold text-white mb-3 group-hover:text-[#008080] transition-colors leading-tight">
-                                        {exp.title}
+                                        {locale === "es" ? exp.title : exp.title_english}
                                     </h2>
 
                                     <p className="text-gray-400 text-sm leading-relaxed line-clamp-2 mb-8">
@@ -95,7 +96,7 @@ export default function ExperiencesPage() {
 
                                     <div className="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
                                         <div>
-                                            <p className="text-[10px] text-gray-500 font-black uppercase tracking-widest mb-1">Desde</p>
+                                            <p className="text-[10px] text-gray-500 font-black uppercase tracking-widest mb-1">{t("tax_included")}</p>
                                             <p className="text-white font-black text-xl">
                                                 <span className="text-[#008080] mr-1">$</span>
                                                 MXN {formatPriceWithDecimals(exp.price)}

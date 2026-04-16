@@ -2,6 +2,7 @@ export interface Destination {
   id: string;
   slug: string;
   name: string;
+  title_english: string;
   short_description: string;
   description: string;
   hero_image: string;

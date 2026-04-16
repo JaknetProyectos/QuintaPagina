@@ -66,6 +66,7 @@ export function useExperiences(options: UseExperiencesOptions = {}) {
           category: e.category,
           rating: e.rating,
           reviewCount: e.review_count,
+          title_english: e.title_english ?? "",
 
           caracteristicas_servicio: e?.caracteristicas_servicio || [],
           itinerario: e?.itinerario || "",

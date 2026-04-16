@@ -34,6 +34,7 @@ export function useExperience(id: string) {
                     images: data.images,
                     rating: data.rating,
                     reviewCount: data.review_count,
+                    title_english: data.title_english ?? "",
                     
                     caracteristicas_servicio: data?.caracteristicas_servicio || [],
                     itinerario: data?.itinerario || "",

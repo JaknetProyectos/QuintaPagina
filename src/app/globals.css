@@ -4,6 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Esto hace que el ícono del calendario sea blanco */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(100%);
+    cursor: pointer;
+}
+
 :root {
   /* Material Design Color Palette */
   --md-primary: #1976D2;
