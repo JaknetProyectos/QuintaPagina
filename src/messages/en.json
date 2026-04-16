@@ -291,6 +291,7 @@
   },
   "CartPage": {
     "cart": {
+      "back": "Back to cart",
       "title": "My Travel Bag",
       "items": "Adventures",
       "remove": "Discard",

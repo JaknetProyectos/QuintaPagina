@@ -34,9 +34,9 @@ export default function CotizacionSection() {
             </div>
             
             {/* Badge flotante M3 */}
-            <div className="absolute top-6 right-6 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full flex items-center gap-2">
+            <div className="absolute top-6 right-6 bg-white backdrop-blur-md border border-white/20 px-4 py-2 rounded-full flex items-center gap-2">
               <Sparkles className="w-4 h-4 text-[#008080]" />
-              <span className="text-xs font-bold tracking-widest uppercase">Premium Plan</span>
+              <span className="text-xs font-bold text-[#008080] tracking-widest uppercase">Premium Plan</span>
             </div>
           </div>
 

@@ -278,7 +278,7 @@ export default function CartPage() {
                                     onClick={() => setShowForm(false)}
                                     className="flex items-center gap-2 text-[10px] font-black text-gray-500 uppercase tracking-widest hover:text-[#008080] transition-colors ml-4"
                                 >
-                                    <ChevronLeft size={14} /> {t("cart.remove").replace(t("cart.remove"), "Volver a la bolsa")}
+                                    <ChevronLeft size={14} /> {t("cart.back")}
                                 </button>
 
                                 {/* 1. Datos de Envío */}
@@ -318,12 +318,12 @@ export default function CartPage() {
                                 </div>
 
                                 {/* 2. Datos de Pago */}
-                                <div className="bg-white/5 backdrop-blur-3xl rounded-[40px] p-8 md:p-10 border border-white/10 relative overflow-hidden">
+                                <div className="bg-white/10 backdrop-blur-3xl rounded-[40px] p-8 md:p-10 border border-white/10 relative overflow-hidden">
                                     <div className="flex justify-between items-center mb-10 pb-6 border-b border-white/5">
                                         <h2 className="text-xs font-black text-white uppercase tracking-[0.3em] flex items-center gap-3">
                                             <CardIcon className="text-[#008080]" size={18} /> {t("payment.method")}
                                         </h2>
-                                        <Image src={etominLogo} alt="Etomin" width={120} height={50} className="object-contain opacity-50 transition-all cursor-help" />
+                                        <Image src={etominLogo} alt="Etomin" width={150} height={60} className="object-contain brightness-150 opacity-50 transition-all cursor-help" />
                                     </div>
 
                                     <div className="space-y-4">

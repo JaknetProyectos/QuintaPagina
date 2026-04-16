@@ -88,10 +88,10 @@ export default function HeroSection() {
     {/* 7. FEATURE 5 (Enfoque en el texto) */}
     <div className="md:col-span-4 md:row-span-1 bg-gray-900 rounded-[40px] p-6 text-white group">
       <div className="flex justify-between items-start mb-4">
-        <Handshake className="w-8 h-8 text-[#008080]" />
+        <Handshake className="w-8 h-8 text-white" />
         <div className="w-2 h-2 rounded-full bg-[#D1127C] animate-ping" />
       </div>
-      <h3 className="font-bold mb-2 text-black">{t("features.concierge.title")}</h3>
+      <h3 className="font-bold mb-2 text-white">{t("features.concierge.title")}</h3>
       <p className="text-xs text-gray-400 leading-relaxed">{t("features.concierge.desc")}</p>
     </div>
 
