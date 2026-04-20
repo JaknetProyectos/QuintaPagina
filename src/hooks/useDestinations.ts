@@ -18,8 +18,6 @@ export function useDestinations() {
           .from("destinations_wondermx")
           .select("*");
 
-        console.log(data)
-
         if (error) throw error;
 
         setData(data);

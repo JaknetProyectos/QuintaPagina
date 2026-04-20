@@ -15,9 +15,7 @@ export function useExperience(id: string) {
                     .select("*")
                     .eq("id", id)
                     .maybeSingle();
-
-                console.log(id)
-
+                    
                 if (error) throw error;
 
                 const mapped = {

@@ -92,7 +92,6 @@ export async function checkout(cart: CartItem[], userData: any, cardData: any,lo
 
     // Guardamos todas en la DB primero
     for (const item of cart) {
-        console.log({ item })
         const reservation = await saveReservation({
             activityTitle: item.title,
             destinationName: item.destinationName,
@@ -137,9 +136,6 @@ export async function checkout(cart: CartItem[], userData: any, cardData: any,lo
             email: userData.email
         }
     };
-
-    console.log({ checkoutInfo })
-    console.log({ results })
 
     // 🔥 ENVIAR UN SOLO EMAIL CON TODO EL ARRAY
     await sendConfirmationEmail(results, checkoutInfo,locale);

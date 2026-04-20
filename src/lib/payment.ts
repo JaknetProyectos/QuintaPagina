@@ -28,14 +28,7 @@ export async function processEtominPayment(payment: PaymentData) {
             password: process.env.ETOMIN_PASSWORD
         });
 
-        console.log({
-            email: process.env.ETOMIN_USER,
-            pass : process.env.ETOMIN_PASSWORD
-        })
-        console.log({payment})
-
         const token = authResponse.data.authToken;
-        console.log({token})
 
         if (!token) throw new Error("Error al autenticarse con Etomin");
 
@@ -51,11 +44,7 @@ export async function processEtominPayment(payment: PaymentData) {
             }
         });
 
-        console.log({payment})
-
         const cardToken = tokenResponse.data.cardNumberToken;
-
-        console.log({cardToken})
 
         // 3. Realizar la Venta (Sale)
         // El código de moneda '484' es para Pesos Mexicanos (MXN)
@@ -81,8 +70,6 @@ export async function processEtominPayment(payment: PaymentData) {
             currency: '484',
             reference: payment.orderId
         });
-
-        console.log({saleResponse})
 
         // Retornamos la data si el status es aprobado (usualmente 'APPROVED' o '00')
         return saleResponse.data;
